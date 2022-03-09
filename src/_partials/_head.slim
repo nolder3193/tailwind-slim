@@ -1,0 +1,14 @@
+- page_title = page.data[:title]
+title
+  - if page_title.nil?
+    = "#{site.metadata.title}: #{site.metadata.tagline}"
+  - else
+    = "#{page_title} | #{site.metadata.title}"
+
+meta charset="utf-8"
+meta name="viewport" content="width=device-width, initial-scale=1.0"
+meta name="description" content="#{site.metadata.description}"
+
+link rel='stylesheet' href=asset_path('css')
+
+= live_reload_dev_js
